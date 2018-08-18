@@ -9,6 +9,8 @@ before_install:
   - brew install docker-compose
 #  - brew cask install virtualbox
   - brew install docker-machine-driver-xhyve
+  - sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+  - sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
   - /usr/local/bin/docker-machine create --driver xhyve dev
 
 install:
