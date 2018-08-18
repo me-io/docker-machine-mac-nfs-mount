@@ -5,7 +5,7 @@ then
   echo "This script must be run with sudo: sudo ${0}"
   exit -1
 fi
-
+## if more than one machine show selection
 SUDOU=${SUDO_USER} ## sudo username
 MACHINE_NAME="dev" ## machine name
 
