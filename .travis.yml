@@ -10,9 +10,8 @@ before_install:
   - /usr/local/bin/docker-machine create dev
 
 install:
-  # Install pip.
   - sudo easy_install pip
+  - sudo bash ./docker_machine_mount_nfs.sh
 
 script:
-  # Install dependencies.
-  - sudo bash ./docker_machine_mount_nfs.sh
+  - sudo bash ./test.sh
