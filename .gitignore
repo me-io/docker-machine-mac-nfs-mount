@@ -1,8 +1,15 @@
 .idea/
+
+.DS_Store
+.localized
+Thumbs.db
+*.swp
+*.out
+!.gitkeep
+
 npm-debug.log
 node_modules
 build
 dist
 lib
 yarn.lock
-!.gitkeep

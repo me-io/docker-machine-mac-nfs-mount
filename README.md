@@ -4,17 +4,18 @@
 
 #### wget:
 ```bash
-sudo bash <(wget -qO- https://raw.githubusercontent.com/me-io/docker-machine-mac-nfs-mount/master/docker_machine_mount_nfs.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/me-io/docker-machine-mac-nfs-mount/master/docker_machine_mount_nfs.sh)
+
 ```
 
 #### curl:
 ```bash
-sudo bash <(curl -s https://raw.githubusercontent.com/me-io/docker-machine-mac-nfs-mount/master/docker_machine_mount_nfs.sh)
+bash <(curl -s https://raw.githubusercontent.com/me-io/docker-machine-mac-nfs-mount/master/docker_machine_mount_nfs.sh)
 ```
 
 ### Features
 Mac docker machine fixes
-- NFS Update for Mac OS
+- NFS Update for Mac OS X
 - NFS Update for boot2docker `docker-machine`
 - NTPD Update 
 - Remount /Users dir
