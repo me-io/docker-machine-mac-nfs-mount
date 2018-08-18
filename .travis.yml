@@ -7,7 +7,7 @@ before_install:
   - brew install docker
   - brew install docker-machine
   - brew install docker-compose
-  - brew cask install virtualbox
+#  - brew cask install virtualbox
   - brew install docker-machine-driver-xhyve
   - /usr/local/bin/docker-machine create --driver xhyve dev
 
