@@ -1,0 +1,11 @@
+---
+sudo: required
+os: osx
+
+install:
+  # Install pip.
+  - sudo easy_install pip
+
+script:
+  # Install dependencies.
+  - sudo bash ./docker_machine_mount_nfs.sh
