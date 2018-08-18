@@ -2,6 +2,13 @@
 sudo: required
 os: osx
 
+before_install:
+  - brew update
+  - brew outdated docker || brew upgrade docker
+  - brew outdated docker-machine || brew upgrade docker-machine
+  - brew outdated docker-compose || brew upgrade docker-compose
+  - /usr/local/bin/docker-machine create dev
+
 install:
   # Install pip.
   - sudo easy_install pip
