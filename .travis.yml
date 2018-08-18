@@ -4,9 +4,9 @@ os: osx
 
 before_install:
   - brew update
-  - brew outdated docker || brew upgrade docker
-  - brew outdated docker-machine || brew upgrade docker-machine
-  - brew outdated docker-compose || brew upgrade docker-compose
+  - brew install docker
+  - brew install docker-machine
+  - brew install docker-compose
   - /usr/local/bin/docker-machine create dev
 
 install:
