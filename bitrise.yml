@@ -14,30 +14,20 @@ trigger_map:
   workflow: ci
 
 workflows:
-  _setup_dockertoolbox:
+  ci:
     steps:
     - script:
-        title: install brew
+        title: install docker-toolbox + virtualbox
         inputs:
         - content: |-
-                    #!/usr/bin/env bash
-                    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+            #!/bin/bash
+            set -ex
+            brew cask install virtualbox
+            brew cask install docker-toolbox
     - script:
         title: install docker-toolbox + virtualbox
         inputs:
-          - content: |-
-                      #!/bin/bash
-                      set -ex
-                      brew cask install virtualbox
-                      brew cask install docker-toolbox
-    - script:
-        title: install docker-toolbox + virtualbox
-        inputs:
-          - content: docker-machine create dev
-  ci:
-    before_run:
-      - _setup_dockertoolbox
-    steps:
+        - content: docker-machine create dev
     - script:
         title: run mount script
         inputs:

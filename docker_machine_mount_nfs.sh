@@ -7,10 +7,10 @@ then
 fi
 ## if more than one machine show selection
 SUDOU=${SUDO_USER} ## sudo username
-MACHINE_NAME="dev" ## machine name
+MACHINE_NAME=${1:-"default"} ## machine name
 
-OSX_IP=$(ifconfig en0 | grep --word-regexp inet | awk '{print $2}')
 B2D_IP=$(sudo cat ~/.docker/machine/machines/${MACHINE_NAME}/config.json | grep IPAddress | cut -d'"' -f4)
+OSX_IP=$(ifconfig en0 | grep --word-regexp inet | awk '{print $2}')
 B2D_ETH0_IP=$(sudo -u ${SUDOU} docker-machine ssh ${MACHINE_NAME} ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 
 if [ "$B2D_IP" = 0 ] || [ "$B2D_IP" = "" ] || [ "$B2D_ETH0_IP" = 0 ] || [ "$B2D_ETH0_IP" = "" ]; then
@@ -57,6 +57,8 @@ fi
 bootlocalCmd="
   #!/bin/bash
   sudo sysctl -w vm.max_map_count=262144
+  sudo sysctl -w fs.file-max=801896
+  sudo sysctl -w net.core.somaxconn=65535
   echo 'Un-mounting ${WKSDIR}'
   sudo umount -f ${WKSDIR} 2> /dev/null
   echo 'Starting docker-machine nfs-client'
