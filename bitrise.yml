@@ -1,18 +1,12 @@
 ---
-format_version: "6"
+format_version: '5'
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
-project_type: ios
-
-app:
-  envs:
-  - SOURCE_DIR: $BITRISE_SOURCE_DIR
-
+project_type: other
 trigger_map:
 - push_branch: "*"
   workflow: ci
 - pull_request_target_branch: "*"
   workflow: ci
-
 workflows:
   ci:
     steps:
@@ -31,11 +25,10 @@ workflows:
     - script:
         title: run mount script
         inputs:
-          - working_dir: $SOURCE_DIR
-          - content: |-
-                      #!/bin/bash
-                      set -ex
-                      eval $(docker-machine env dev)
-                      ls -al .
-                      sudo bash ./docker_machine_mount_nfs.sh
-
+        - working_dir: "$BITRISE_SOURCE_DIR"
+        - content: |-
+            #!/bin/bash
+            set -ex
+            eval $(docker-machine env dev)
+            ls -al .
+            sudo bash ./docker_machine_mount_nfs.sh
