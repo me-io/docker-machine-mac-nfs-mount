@@ -19,7 +19,9 @@ workflows:
     - script:
         title: install brew
         inputs:
-        - content: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        - content: |-
+                    #!/usr/bin/env bash
+                    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     - script:
         title: install docker-toolbox + virtualbox
         inputs:
