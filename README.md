@@ -1,6 +1,6 @@
 
 <p align="center">
-  <h2 align="center">Docker machine Mac OS X Utils</h2>
+  <h2 align="center">Docker machine Mac OS X NFS Util</h2>
   <p align="center">
     <a href="https://app.bitrise.io/app/108f6546a2dabcdd">
       <img src="https://app.bitrise.io/app/108f6546a2dabcdd/status.svg?token=FlpOj4XIGhpmVvJNIpfxOg&branch=master" alt="Build Status">
