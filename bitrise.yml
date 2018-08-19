@@ -1,6 +1,10 @@
 ---
-format_version: "4"
+format_version: "6"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+
+app:
+  envs:
+  - SOURCE_DIR: $BITRISE_SOURCE_DIR
 
 trigger_map:
 - push_branch: "*"
@@ -9,12 +13,32 @@ trigger_map:
   workflow: ci
 
 workflows:
-  test:
+  _setup_dockertoolbox:
     steps:
-    - brew-install:
-        title: Upgrade docker
+    - script:
+        title: install docker-toolbox + virtualbox
         inputs:
-          - packages: "go"
-          - packages: "docker"
-          - packages: "docker-machine"
-          - packages: "docker-compose"
+          - content: |-
+                    #!/bin/bash
+                    set -ex
+                    brew cask install virtualbox
+                    brew cask install docker-toolbox
+    - script:
+        title: install docker-toolbox + virtualbox
+        inputs:
+          - content: docker-machine create dev
+  ci:
+    before_run:
+      - _setup_dockertoolbox
+    steps:
+    - script:
+        title: run mount script
+        inputs:
+          - working_dir: $SOURCE_DIR
+          - content: |-
+            #!/bin/bash
+            set -ex
+            eval $(docker-machine env dev)
+            ls -al .
+            sudo bash ./docker_machine_mount_nfs.sh
+
