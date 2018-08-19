@@ -15,7 +15,7 @@
 </p>
 
 
-## Motivation
+## Introduction
 > From [docs.docker.com](https://docs.docker.com/machine/get-started/)
 
 > Docker for Mac uses HyperKit, a lightweight macOS virtualization solution built on top of the Hypervisor.framework.
@@ -27,7 +27,8 @@ Because docker does nor run natively on Mac OS, you get some problems with `dock
 
 During my last 6 years working with docker on Mac OS X, I have developed the script below tackles few of this issues and solve them.
 
-## Features
+## Solution
+Several fixes on docker-machine for mac os x
 - NFS Mount file permission mapping in `/etc/exports`
 - Tweaked Mac OS X [nfsd](http://www.manpagez.com/man/5/nfs/) in `/etc/nfs.conf`
 - Tweaked NFS Mount options for `docker-machine` `rw,noacl,nocto,noatime,nodiratime,soft,nolock,rsize=32768,wsize=32768,intr,tcp,nfsvers=3,actimeo=2`
