@@ -1,10 +1,11 @@
 # Docker machine Mac OS X Utils
 
 ## Motivation
-From [docs.docker.com](https://docs.docker.com/machine/get-started/)
-> Docker for Mac uses HyperKit, a lightweight macOS virtualization solution built on top of the Hypervisor.framework.
+> From [docs.docker.com](https://docs.docker.com/machine/get-started/)
 
-> Currently, there is no docker-machine create driver for HyperKit, so use the virtualbox driver to create local machines 
+> Docker for Mac uses HyperKit, a lightweight macOS virtualization solution built on top of the Hypervisor.framework.
+> Currently, there is no docker-machine create driver for HyperKit, so use the virtualbox driver to create local machines
+ 
 
 Working with docker on Mac OS X is frustrating, especially for large projects with a lot of folders and files.
 Because docker does nor run natively on Mac OS, you get some problems with `docker-machine`, like **NFS Volume mounting, UTC time - ntp, file permissions**. 
