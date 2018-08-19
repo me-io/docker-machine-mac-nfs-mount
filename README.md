@@ -1,4 +1,19 @@
-# Docker machine Mac OS X Utils
+
+<p align="center">
+  <h2 align="center">Docker machine Mac OS X Utils</h2>
+  <p align="center">
+    <a href="https://app.bitrise.io/app/108f6546a2dabcdd">
+      <img src="https://app.bitrise.io/app/108f6546a2dabcdd/status.svg?token=FlpOj4XIGhpmVvJNIpfxOg&branch=master" alt="Build Status">
+    </a>
+    <a href="LICENSE.md">
+      <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
+    </a>
+    <a href="https://www.paypal.me/meabed">
+      <img src="https://img.shields.io/badge/paypal-donate-179BD7.svg?style=flat-squares" alt="Donate">
+    </a>
+  </p>
+</p>
+
 
 ## Motivation
 > From [docs.docker.com](https://docs.docker.com/machine/get-started/)

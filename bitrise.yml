@@ -10,6 +10,8 @@ trigger_map:
 workflows:
   ci:
     steps:
+    - activate-ssh-key:
+    - git-clone:
     - script:
         title: install docker-toolbox + virtualbox
         inputs:
@@ -19,16 +21,16 @@ workflows:
             brew cask install virtualbox
             brew cask install docker-toolbox
     - script:
-        title: install docker-toolbox + virtualbox
+        title: docker-machine create dev
         inputs:
         - content: docker-machine create dev
     - script:
-        title: run mount script
+        title: run docker-machine nfs script
         inputs:
         - working_dir: "$BITRISE_SOURCE_DIR"
         - content: |-
             #!/bin/bash
             set -ex
             eval $(docker-machine env dev)
-            ls -al .
-            sudo bash ./docker_machine_mount_nfs.sh
+            echo "BITRISE_SOURCE_DIR: $BITRISE_SOURCE_DIR"
+            sudo bash ./docker_machine_mount_nfs.sh dev
