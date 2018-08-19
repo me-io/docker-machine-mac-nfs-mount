@@ -1,0 +1,20 @@
+---
+format_version: "4"
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+
+trigger_map:
+- push_branch: "*"
+  workflow: ci
+- pull_request_target_branch: "*"
+  workflow: ci
+
+workflows:
+  test:
+    steps:
+    - brew-install:
+        title: Upgrade docker
+        inputs:
+          - packages: "go"
+          - packages: "docker"
+          - packages: "docker-machine"
+          - packages: "docker-compose"
