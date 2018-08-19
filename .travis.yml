@@ -9,7 +9,7 @@ before_install:
   - brew install docker-compose
 #  - brew cask install virtualbox
   - brew install docker-machine-driver-xhyve
-  - sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+  - sudo chown travis:staff $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
   - sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
   - wget -O /tmp/boot2docker.iso https://github.com/boot2docker/boot2docker/releases/download/v18.06.0-ce/boot2docker.iso
   - /usr/local/bin/docker-machine create --driver xhyve --xhyve-boot2docker-url="/tmp/boot2docker.iso" dev
