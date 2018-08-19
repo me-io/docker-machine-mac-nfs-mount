@@ -37,16 +37,19 @@ Several fixes on docker-machine for mac os x
 - sysctl tweaks `vm.max_map_count=262144` `fs.file-max=801896` `net.core.somaxconn=65535`
 
 ## How to use
+
 #### wget:
 ```bash
 wget -O docker_machine_mount_nfs.sh https://raw.githubusercontent.com/me-io/docker-machine-mac-nfs-mount/master/docker_machine_mount_nfs.sh
-sudo bash ./docker_machine_mount_nfs.sh
+# you can get machine name from docker-machine ls
+sudo bash ./docker_machine_mount_nfs.sh default 
 ```
 
 #### curl:
 ```bash
 curl -o docker_machine_mount_nfs.sh https://raw.githubusercontent.com/me-io/docker-machine-mac-nfs-mount/master/docker_machine_mount_nfs.sh
-sudo bash ./docker_machine_mount_nfs.sh
+# you can get machine name from docker-machine ls
+sudo bash ./docker_machine_mount_nfs.sh default
 ```
 
 
