@@ -33,6 +33,7 @@ workflows:
             set -ex
             eval $(docker-machine env dev)
             echo "BITRISE_SOURCE_DIR: $BITRISE_SOURCE_DIR"
+            docker-machine ls
             sudo bash ./docker_machine_mount_nfs.sh dev
     - script:
         title: test docker-machine nfs script
