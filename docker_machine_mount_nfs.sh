@@ -65,7 +65,7 @@ bootlocalCmd="
   sudo /usr/local/etc/init.d/nfs-client start 2> /dev/null
   echo 'Mounting ${WKSDIR}'
   sudo mkdir -p ${WKSDIR}
-  sudo mount -t nfs -o rw,noacl,nocto,noatime,nodiratime,soft,nolock,rsize=32768,wsize=32768,intr,tcp,nfsvers=3,actimeo=1 $B2D_NET:${WKSDIR} ${WKSDIR}
+  sudo mount -t nfs -o rw,noacl,nocto,noatime,nodiratime,soft,nolock,rsize=32768,wsize=32768,intr,tcp,nfsvers=3,actimeo=2 $B2D_NET:${WKSDIR} ${WKSDIR}
   echo 'Mounted ${WKSDIR}'
   # ls -x ${WKSDIR}
   # tce-load -wi sshfs-fuse
