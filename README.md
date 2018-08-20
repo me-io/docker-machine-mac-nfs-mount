@@ -9,7 +9,7 @@
       <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
     </a>
     <a href="https://www.paypal.me/meabed">
-      <img src="https://img.shields.io/badge/paypal-donate-179BD7.svg?style=flat-squares" alt="Donate">
+      <img src="https://img.shields.io/badge/paypal-Buy_Me_Coffee-179BD7.svg?style=flat-squares" alt="Buy Me Coffee">
     </a>
   </p>
 </p>
